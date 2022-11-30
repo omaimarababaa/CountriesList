@@ -89,7 +89,7 @@ function display(reginSelect) {
 }
 function setlocalstorage(data) {
   window.localStorage.setItem("Country", JSON.stringify(data));
-  window.open("http://127.0.0.1:5500/details.html", "_self");
+  window.open("https://omaimarababaa.github.io/CountriesList/details.html", "_self");
 }
 moon.addEventListener("click", () => {
   let element = document.body;
