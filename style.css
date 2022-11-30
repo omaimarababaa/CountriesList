@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Nunito+Sans:ital,wght@0,300;0,600;0,800;1,300;1,600;1,800&family=Raleway:ital,wght@0,100;0,200;0,400;1,300&display=swap");
+:root {
+  --DarkBlue: hsl(209, 23%, 22%);
+  --VeryDarkBlueBackground: hsl(207, 26%, 17%);
+  --VeryLightBlueText: hsl(200, 15%, 8%);
+  --DarkGrayLightModeInput: hsl(0, 0%, 52%);
+  --VeryLightGrayModeBackground: hsl(0, 0%, 98%);
+  --WhiteDarkModeTextLightModeElements: hsl(0, 0%, 100%);
+}
+@media only screen and (max-width: 375px) {
+  .countryInfo >* {
+    display: block;
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: var(--VeryLightGrayModeBackground);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--WhiteDarkModeTextLightModeElements);
+}
+.moon {
+  display: inline;
+}
+
+body.dark-mode {
+  background-color: var(--VeryDarkBlueBackground);
+  color: var(--WhiteDarkModeTextLightModeElements);
+}
+.header > * {
+  margin: 20px 40px;
+}
+.headerTitle {
+  font-weight: 800;
+}
+.darkMode {
+  font-weight: 600;
+  display: inline;
+}
+.searchSection {
+  display: flex;
+  justify-content: space-between;
+}
+.search {
+  padding: 15px 90px;
+  border-radius: 4px;
+  box-shadow: 3px 2px 2px 2px var(--VeryLightGrayModeBackground);
+  margin: 25px 0px 20px 51px;
+}
+input[type="search"] {
+  background: transparent url(./icon/search_FILL0_wght400_GRAD0_opsz48.svg);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+
+  opacity: 0.4;
+}
+#reginFilter {
+  margin: 19px 100px 2px 2px;
+  padding: 0px 9px 0px 9px;
+  border: none;
+}
+#reginFilter > * {
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 5px;
+}
+.countrySection {
+  width: 15%;
+  height: 250px;
+  background-color: var(--WhiteDarkModeTextLightModeElements);
+  margin: 50px;
+}
+.countryInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+span {
+  display: block;
+  padding: 5px;
+}
+.countryInfo > * {
+  background-color: var(--WhiteDarkModeTextLightModeElements);
+  width: 66%;
+  height: 350px;
+  margin: 50px;
+}
+a {
+  cursor: pointer;
+}
+.ReturnBack {
+  margin: 50px;
+  padding: 5px 30px;
+  text-decoration: none;
+  color: var(--DarkGrayLightModeInput);
+  background-color: var(--WhiteDarkModeTextLightModeElements);
+}
+.Back{
+  margin: 40px;
+}
+.countryFlage {
+  margin: 50px;
+  width: 35%;
+  height: 35%;
+}
+.flagImge {
+  width: 100%;
+  height: 100%;
+}
+.Border > * {
+  display: inline;
+}
+.borderStyle {
+  background-color: var(--WhiteDarkModeTextLightModeElements);
+  padding: 6px 30px;
+  margin: 5px;
+}
+
+.rightImage {
+  display: flex;
+  justify-content: space-evenly;
+}
+.countryInfo2 {
+  display: grid;
+  grid-template-columns: 300px 200px;
+  margin: 79px;
+}
