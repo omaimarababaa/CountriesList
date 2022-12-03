@@ -84,6 +84,7 @@ function getInfoCountries(countriesData) {
     ];
     //----------Send data to two page---------------------------------------------------------
     linkCountryInfo.addEventListener("click", () => {
+      window.open("../details.html", "_self");
       setlocalstorage(arrayInfo);
     });
   }
