@@ -63,7 +63,7 @@ function dataextra(exraInfo) {
  border =exraInfo[0].borders;
   for (let i = 0; i < border.length; i++) {
     let borderN=border[i];
-    let borderCountries =fetch(country+"/v2/name/"+ borderN);
+    let borderCountries =fetch(country+"/v2/name/"+borderN);
     borderCountries
       .then((response) => {
         if (response.ok) {
