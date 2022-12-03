@@ -18,20 +18,29 @@
 }
 body {
   font-family: "Nunito Sans", sans-serif;
-  background-color: var(--VeryLightGrayModeBackground);
+  background-color: var(--VeryDarkBlueBackground);
 }
 .header {
   display: flex;
   justify-content: space-between;
-  background-color: var(--WhiteDarkModeTextLightModeElements);
+  color: var(--WhiteDarkModeTextLightModeElements);
+  background-color: var(--DarkBlue);
 }
 .moon {
   display: inline;
+  
+  background-color: var(--DarkBlue);
+  border: none;
+  cursor: pointer;
 }
 
-body.dark-mode {
-  background-color: var(--VeryDarkBlueBackground);
-  color: var(--WhiteDarkModeTextLightModeElements);
+body.dark-mode , header {
+  background-color: var(--VeryLightGrayModeBackground);
+  color: var(--VeryLightBlueText);
+}
+body.dark-mode > * {
+  background-color: var(--VeryLightGrayModeBackground);
+  color: var(--VeryLightBlueText);
 }
 .header > * {
   margin: 20px 40px;
@@ -48,14 +57,16 @@ body.dark-mode {
   justify-content: space-between;
 }
 .search {
-  padding: 15px 90px;
+  color: var(--WhiteDarkModeTextLightModeElements);
+  padding: 10px 90px;
   border-radius: 4px;
-  box-shadow: 3px 2px 2px 2px var(--VeryLightGrayModeBackground);
+  box-shadow: 3px 2px 2px 2px var(--DarkBlue);
   margin: 25px 0px 20px 51px;
 }
 input[type="search"] {
   background: transparent url(./icon/search_FILL0_wght400_GRAD0_opsz48.svg);
-  background-color: white;
+  background-color: var(--DarkBlue);
+  
   background-repeat: no-repeat;
   background-size: contain;
   border: none;
@@ -67,6 +78,8 @@ input[type="search"] {
   margin: 19px 100px 2px 2px;
   padding: 0px 9px 0px 9px;
   border: none;
+  color: var(--WhiteDarkModeTextLightModeElements);
+  background-color: var(--DarkBlue);
 }
 #reginFilter > * {
   border: none;
@@ -77,7 +90,7 @@ input[type="search"] {
 .countrySection {
   width: 15%;
   height: 250px;
-  background-color: var(--WhiteDarkModeTextLightModeElements);
+  background-color: var(--DarkBlue);
   margin: 50px;
 }
 .countryInfo {
@@ -89,24 +102,28 @@ span {
   padding: 5px;
 }
 .countryInfo > * {
-  background-color: var(--WhiteDarkModeTextLightModeElements);
-  width: 66%;
+  background-color: var(--DarkBlue);
+  color: var(--WhiteDarkModeTextLightModeElements);
+  width: 247px;
   height: 350px;
   margin: 50px;
 }
 a {
   cursor: pointer;
 }
+/* ---------Page 2---------- */
 .ReturnBack {
   margin: 50px;
   padding: 5px 30px;
   text-decoration: none;
-  color: var(--DarkGrayLightModeInput);
-  background-color: var(--WhiteDarkModeTextLightModeElements);
+  color: var(--WhiteDarkModeTextLightModeElements);
+  background-color: var(--DarkBlue);
 }
 .Back{
   margin: 40px;
+
 }
+
 .countryFlage {
   margin: 50px;
   width: 35%;
@@ -120,7 +137,7 @@ a {
   display: inline;
 }
 .borderStyle {
-  background-color: var(--WhiteDarkModeTextLightModeElements);
+  background-color: var(--DarkBlue);
   padding: 6px 30px;
   margin: 5px;
 }
@@ -128,6 +145,7 @@ a {
 .rightImage {
   display: flex;
   justify-content: space-evenly;
+  color: var(--WhiteDarkModeTextLightModeElements);
 }
 .countryInfo2 {
   display: grid;

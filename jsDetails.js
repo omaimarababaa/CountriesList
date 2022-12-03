@@ -13,32 +13,23 @@ function getLocalStoreg() {
   return info;
 }
 
-let countryName = document.createElement("h2");
-let population = document.createElement("span");
-let regin = document.createElement("span");
-let capital = document.createElement("span");
-let nativeNamec = document.createElement("span");
+let countryName = document.querySelector(".NameC");
+let population = document.querySelector("#Population");
+let regin = document.querySelector("#Regin");
+let SubRegin = document.querySelector("#SubRegin");
+let capital = document.querySelector("#Capital");
+let nativeNamec = document.querySelector("#NativeName");
+let topLevelDomain = document.querySelector("#TopLevelDomain");
+let currencies = document.querySelector("#currencies");
+let Language = document.querySelector("#Language");
 //-----------------------------------------------------
-let data = getLocalStoreg();
-imageFlage.setAttribute("src", data[0]);
-let countryNameT = document.createTextNode(data[1]);
-let populationT = document.createTextNode(data[2]);
-let reginT = document.createTextNode(data[3]);
-let capitalT = document.createTextNode(data[4]);
+let dataOld = getLocalStoreg();
+imageFlage.setAttribute("src", dataOld[0]);
+countryName.textContent = dataOld[1];
+population.textContent = dataOld[2];
+regin.textContent = dataOld[3];
+capital.textContent = dataOld[4];
 
-countryflage.append(imageFlage);
-countryName.append(countryNameT);
-
-countryInfo.append(countryName);
-//population
-population.append(populationT);
-countryInfo.append(population);
-//regin
-regin.append(reginT);
-countryInfo.append(regin);
-//capital
-capital.append(capitalT);
-countryInfo.append(capital);
 //------get More data-------------------
 let namecoy = countryName.textContent;
 let infoCountryURL = fetch(country + "/v2/name/" + namecoy);
@@ -49,52 +40,30 @@ infoCountryURL
     }
   })
   .then((data) => {
+    //console.log(data);
     dataextra(data);
   });
+
 function dataextra(exraInfo) {
   //nativename
-  let xNative = document.createElement("span");
-  let xname = document.createTextNode(
-    `Native Name : ${exraInfo[0].nativeName}`
-  );
-  xNative.append(xname);
-  countryInfo.append(xNative);
+  nativeNamec.textContent += ` ${exraInfo[0].nativeName}`;
   //subRegin
-  let xRegin = document.createElement("span");
-  let xsub = document.createTextNode(`Sub Regin : ${exraInfo[0].subregion}`);
-  xRegin.append(xsub);
-  countryInfo.append(xRegin);
+  SubRegin.textContent += ` ${exraInfo[0].subregion}`;
   //TopLevelDomain
-  let topLevelDomain = document.createElement("span");
-  let domain = document.createTextNode(
-    `Top Level Domain : ${exraInfo[0].topLevelDomain}`
-  );
-  topLevelDomain.append(domain);
-  countryInfo.append(topLevelDomain);
+  topLevelDomain.textContent += `${exraInfo[0].topLevelDomain}`;
   //currencies
-  let current = document.createElement("span");
-  let cur = document.createTextNode(
-    `currencies : ${exraInfo[0].currencies[0].name}`
-  );
-  current.append(cur);
-  countryInfo.append(current);
+  currencies.textContent += `${exraInfo[0].currencies[0].name}`;
   //languages
-  let language = document.createElement("span");
-  let languT = exraInfo[0].languages;
-  console.log(languT);
-
+  let languT = `${exraInfo[0].languages}`;
   for (let i = 0; i < languT.length; i++) {
-    let lang = document.createTextNode(`languages : ${languT[i].name}`);
-
-    
-    language.append(lang);
-    countryInfo.append(language);
+    Language.textContent += `${exraInfo[0].languages[i].name} ,`;
   }
   //borders
-  for (let i = 0; i < languT.length; i++) {
-    let border = exraInfo[0].borders[i];
-  
-    let borderCountries = fetch(country + "/v2/name/" + border);
+  let border=[];
+ border =exraInfo[0].borders;
+  for (let i = 0; i < border.length; i++) {
+    let borderN=border[i];
+    let borderCountries =fetch(country+"/v2/name/"+ borderN);
     borderCountries
       .then((response) => {
         if (response.ok) {
@@ -105,21 +74,21 @@ function dataextra(exraInfo) {
         console.log(data);
         let border1 = document.createElement("span");
         let bor = document.createTextNode(data[0].name);
-        border1.className="borderStyle";
+        border1.className = "borderStyle";
         border1.append(bor);
         Border.append(border1);
       });
+    }
   }
-}
 
 
 //---------Back to one page--------------
 back.addEventListener("click", () => {
   window.localStorage.removeItem("Country");
- // window.open("http://127.0.0.1:5500/index.html", "_self");
+  // window.open("http://127.0.0.1:5500/index.html", "_self");
 });
 //---------
-// moon.addEventListener("click", () => {
-//   let element = document.body;
-//   element.classList.toggle("dark-mode");
-// });
+moon.addEventListener("click", () => {
+  let element = document.body;
+  element.classList.toggle("dark-mode");
+});
